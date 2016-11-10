@@ -1,7 +1,7 @@
 # Regex Tester
 A simple tool to quickly test c# regex from either a string or HTML from a url
 
-![capture](https://cloud.githubusercontent.com/assets/13933661/20040731/cdfbcce4-a42a-11e6-915e-e732ccacc002.PNG)
+![capture](https://cloud.githubusercontent.com/assets/13933661/20163873/06d09306-a6ce-11e6-9d82-67b116fac00a.PNG)
 
 ##To test with a string
 1. Put in text into the first box
@@ -13,8 +13,7 @@ If the program was able to receive the HTML, it will display the length of the H
 If there was an error, the first text box will show "Error"
 2. Put in the RegEx into the RegEx box, press enter
 
-Please note that this program does NOT show multiple match results
-(but that can be easily added at a later date, if you happen to create that before I do, please create a pull request, thanks!)
+This program supports multiple regex results, change the index number and press enter.
 
 Binaries are availible if you don't want to download everything and build it yourself:
 https://github.com/TheIcyStar/Regex-Tester-w-HTML/releases

@@ -30,6 +30,9 @@
 			this.ResultBox = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.ResultIndex = new System.Windows.Forms.TextBox();
+			this.TotalResults = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -74,7 +77,7 @@
 			// 
 			// ResultBox
 			// 
-			this.ResultBox.Location = new System.Drawing.Point(17, 141);
+			this.ResultBox.Location = new System.Drawing.Point(17, 118);
 			this.ResultBox.Multiline = true;
 			this.ResultBox.Name = "ResultBox";
 			this.ResultBox.Size = new System.Drawing.Size(347, 123);
@@ -97,11 +100,42 @@
 			this.label3.TabIndex = 6;
 			this.label3.Text = "or input a url";
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(128, 254);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(37, 13);
+			this.label4.TabIndex = 7;
+			this.label4.Text = "Result";
+			// 
+			// ResultIndex
+			// 
+			this.ResultIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ResultIndex.Location = new System.Drawing.Point(171, 247);
+			this.ResultIndex.Name = "ResultIndex";
+			this.ResultIndex.Size = new System.Drawing.Size(52, 26);
+			this.ResultIndex.TabIndex = 8;
+			this.ResultIndex.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnResultTextChange);
+			// 
+			// TotalResults
+			// 
+			this.TotalResults.AutoSize = true;
+			this.TotalResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.TotalResults.Location = new System.Drawing.Point(229, 250);
+			this.TotalResults.Name = "TotalResults";
+			this.TotalResults.Size = new System.Drawing.Size(26, 20);
+			this.TotalResults.TabIndex = 9;
+			this.TotalResults.Text = "/ 0";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(394, 276);
+			this.Controls.Add(this.TotalResults);
+			this.Controls.Add(this.ResultIndex);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.ResultBox);
@@ -125,6 +159,9 @@
 		private System.Windows.Forms.TextBox ResultBox;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox ResultIndex;
+		private System.Windows.Forms.Label TotalResults;
 	}
 }
 
