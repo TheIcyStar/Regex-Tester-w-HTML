@@ -28,7 +28,8 @@ namespace temp2 {
 		private void OnRegexChange(object sender, EventArgs e) {
 			regexPattern = textBox2.Text;
 		}
-
+		
+		//url text box
 		private void OnUrlKeyUp(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter) {
 				if (textBox3.Text != "") {
@@ -66,7 +67,6 @@ namespace temp2 {
 		//actual regex checker
 		private void UpdateText() {
 			try {
-				//*
 				MatchCollection collection = Regex.Matches(searchString, regexPattern);
 				if (collection.Count > 0) {
 					currentCollection = collection;
@@ -79,19 +79,18 @@ namespace temp2 {
 					TotalResults.Text = "0";
 				}
 				TotalResults.Text = "/ " + collection.Count;
-				//*/
 			}
 			catch (Exception e) {
 				ResultBox.Text = "Exception occured: " + e;
             }
 		}
 
+		//result box
 		int prevPos = 0;
 		private void OnResultTextChange(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter) {
 				int index;
 				try {
-					//*
 					index = Int32.Parse(ResultIndex.Text);
 					if (index <= 0 || index > currentCollection.Count) { //set to the prev position if index is out of range
 																		//set to prevpos
@@ -105,8 +104,6 @@ namespace temp2 {
 							//read "Note To Callers" https://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex.matches.aspx
 						}
 					}
-					//*/
-
 				}
 				catch {
 					//set to prevpos
