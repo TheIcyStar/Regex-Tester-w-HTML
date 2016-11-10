@@ -1,4 +1,4 @@
-﻿namespace temp2 {
+﻿namespace RegexTester {
 	partial class Form1 {
 		/// <summary>
 		/// Required designer variable.

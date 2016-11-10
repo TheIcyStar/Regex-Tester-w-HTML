@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace temp2.Properties {
+namespace RegexTester.Properties {
 
 
 	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

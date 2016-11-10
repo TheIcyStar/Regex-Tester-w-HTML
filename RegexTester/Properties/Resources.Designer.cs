@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace temp2.Properties {
+namespace RegexTester.Properties {
 
 
 	/// <summary>
@@ -38,7 +38,7 @@ namespace temp2.Properties {
 		internal static global::System.Resources.ResourceManager ResourceManager {
 			get {
 				if ((resourceMan == null)) {
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("temp2.Properties.Resources", typeof(Resources).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RegexTester.Properties.Resources", typeof(Resources).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;

@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace temp2 {
+namespace RegexTester {
 	public partial class Form1 : Form {
 
 		string searchString;
