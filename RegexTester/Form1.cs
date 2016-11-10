@@ -7,6 +7,7 @@ namespace temp2 {
 
 		string searchString;
 		string regexPattern;
+		MatchCollection currentCollection;
 
 		public Form1() {
 			InitializeComponent();
@@ -62,19 +63,56 @@ namespace temp2 {
 			}
 		}
 
+		//actual regex checker
 		private void UpdateText() {
 			try {
-				Match match = Regex.Match(searchString, regexPattern);
-				if (match.Success) {
-					ResultBox.Text = match.Value;
+				//*
+				MatchCollection collection = Regex.Matches(searchString, regexPattern);
+				if (collection.Count > 0) {
+					currentCollection = collection;
+					TotalResults.Text = collection.Count.ToString();
+					ResultIndex.Text = "1";
+					ResultBox.Text = currentCollection[0].Value;
 				} else {
-					ResultBox.Text = "No match";
+					ResultBox.Text = "";
+					ResultIndex.Text = "0";
+					TotalResults.Text = "0";
 				}
-				//Console.WriteLine(searchString);
-				//Console.WriteLine(regexPattern);
-			} catch (Exception e) {
-				ResultBox.Text = "Exception occured: "+e;
+				TotalResults.Text = "/ " + collection.Count;
+				//*/
+			}
+			catch (Exception e) {
+				ResultBox.Text = "Exception occured: " + e;
             }
+		}
+
+		int prevPos = 0;
+		private void OnResultTextChange(object sender, KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter) {
+				int index;
+				try {
+					//*
+					index = Int32.Parse(ResultIndex.Text);
+					if (index <= 0 || index > currentCollection.Count) { //set to the prev position if index is out of range
+																		//set to prevpos
+						ResultIndex.Text = prevPos.ToString();
+					}
+					else {
+						prevPos = index;
+						ResultBox.Text = currentCollection[index-1].Value; //don't want to enforce 0-indexing on the end user
+						if (currentCollection[index - 1].Value == "") { //because how does "Result 0 of 1" sound with 2 results?
+							//Console.WriteLine("Empty string"); Add handling for empty strings HERE
+							//read "Note To Callers" https://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex.matches.aspx
+						}
+					}
+					//*/
+
+				}
+				catch {
+					//set to prevpos
+					ResultIndex.Text = prevPos.ToString();
+				}
+			}
 		}
 	}
 }
