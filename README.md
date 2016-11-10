@@ -1,7 +1,7 @@
 # Regex Tester
 A simple tool to quickly test c# regex from either a string or HTML from a url
 
-![capture](https://cloud.githubusercontent.com/assets/13933661/20040731/cdfbcce4-a42a-11e6-915e-e732ccacc002.PNG)
+![capture](https://cloud.githubusercontent.com/assets/13933661/20163873/06d09306-a6ce-11e6-9d82-67b116fac00a.PNG)
 
 ##To test with a string
 1. Put in text into the first box
